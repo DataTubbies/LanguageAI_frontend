@@ -49,43 +49,53 @@ export default function Travel() {
 
   return (
     <div>
-      <div>
-        <h5>Get travel help</h5>
-
-        <form id="form-joke2">
+      <div className="grid md:grid-cols-1 mx-20">
+        <form className="space-y-3 w-full mt-5 text-center" id="form-joke2">
+          <h1 className="font-mono text-2xl font-bold text-black-900">🤖Your AI travel helper🤖</h1>
           <div>
-            <label htmlFor="budget">Budget</label>
-            <input type="text" id="budget" placeholder="What is your budget in DKK?" />
+            <label htmlFor="budget" className="font-mono">
+              What is your budget in DKK?
+            </label>
+            <br />
+            <input className="font-mono mt-1 w-1/3 text-center rounded-md border border-black-950 focus:ring-astronaut-blue-500 focus:border-astronaut-blue-500 drop-shadow-xl" type="number" id="budget" required />
           </div>
           <div>
-            <label htmlFor="start">Start Location</label>
-            <input type="text" id="start" placeholder="Where are you planning to travel from?" />
+            <label htmlFor="start" className="font-mono">
+              Where are you planning to travel from?
+            </label>
+            <br />
+            <input className="font-mono mt-1 w-1/3 text-center rounded-md border border-black-950 focus:ring-astronaut-blue-500 focus:border-astronaut-blue-500 drop-shadow-xl" type="text" id="start" required />
           </div>
           <div>
-            <label htmlFor="destination">Destination</label>
-            <input type="text" id="destination" placeholder="Where do you want to visit? (Optional)" />
+            <label htmlFor="destination" className="font-mono">
+              Where do you want to visit? (Optional)
+            </label>
+            <br />
+            <input className="font-mono mt-1 w-1/3 text-center rounded-md border border-black-950 focus:ring-astronaut-blue-500 focus:border-astronaut-blue-500 drop-shadow-xl" type="text" id="destination" />
           </div>
           <div>
-            <label htmlFor="month">When</label>
-            <input type="text" id="month" placeholder="When would you like to travel? (Month)" />
+            <label htmlFor="month" className="font-mono">
+              When would you like to travel (Month)
+            </label>
+            <br />
+            <input className="font-mono mt-1 w-1/3 text-center rounded-md border border-black-950 focus:ring-astronaut-blue-500 focus:border-astronaut-blue-500 drop-shadow-xl" type="text" id="month" required />
           </div>
           <div>
-            <label htmlFor="duration">Duration</label>
-            <input type="text" id="duration" placeholder="For how long would you like to travel?" />
+            <label htmlFor="month" className="font-mono">
+              For how long would you like to travel? (Days)
+            </label>
+            <br />
+            <input className="font-mono mt-1 w-1/3 text-center rounded-md border border-black-950 focus:ring-astronaut-blue-500 focus:border-astronaut-blue-500 drop-shadow-xl " type="number" id="duration" required />
           </div>
           <div>
-            <div>
-              <button onClick={handleClick}>Get Joke</button>
-              {answer && <p>{answer}</p>}
-            </div>
+            <button className="bg-astronaut-blue-500 rounded-md w-1/5 border border-astronaut-blue-50 text-black-50" onClick={handleClick}>
+              Get Travel Suggestions!
+            </button>
+            {answer && <p className="text-black-50">{answer}</p>}
           </div>
         </form>
 
-        <div id="spinner2" role="status">
-          <span>Loading...</span>
-        </div>
-
-        <p id="result2"></p>
+        <p className="text-black-50" id="result2"></p>
       </div>
     </div>
   );
