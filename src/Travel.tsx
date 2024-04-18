@@ -13,7 +13,7 @@ async function getTravelWithRateLimit(event) {
     },
     body: JSON.stringify({
       budget: document.getElementById("budget").value,
-      startingLocation: document.getElementById("start").value,
+      startingLocation: document.getElementById("startLocation").value,
       destination: document.getElementById("destination").value,
       month: document.getElementById("month").value,
       duration: document.getElementById("duration").value,
